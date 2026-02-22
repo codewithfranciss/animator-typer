@@ -1,60 +1,38 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
+
+interface DropdownItemProps {
+  label: string;
+  value: string;
+}
+
+function DropdownItem({ label, value }: DropdownItemProps) {
+  return (
+    <div className="flex flex-col min-w-[70px] lg:min-w-[90px]">
+      <span className="text-[10px] font-bold tracking-widest text-[#666666]">{label}</span>
+      <div className="flex items-center justify-between cursor-pointer group">
+        <span className="text-[14px] font-medium text-[#e0e0e0] group-hover:text-white transition-colors">{value}</span>
+        <ChevronDown className="w-4 h-4 text-[#555555] group-hover:text-white/70 transition-colors" />
+      </div>
+    </div>
+  );
+}
 
 export function ControlDock() {
   return (
-    <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 w-full max-w-[840px] px-6">
-      <div className="bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/5 rounded-[2rem] px-8 py-4 flex items-center justify-between gap-8 shadow-2xl">
-        {/* SPEED */}
-        <div className="flex items-center gap-4 group">
-          <label className="text-[10px] uppercase tracking-widest text-white/20 font-semibold">Speed</label>
-          <div className="flex items-center gap-3">
-            <input 
-              type="range" 
-              className="w-24 h-1 cursor-pointer" 
-              min="0" 
-              max="100" 
-              defaultValue="65" 
-            />
-            <span className="text-[11px] font-mono text-white/30 w-4">65</span>
+    <div className="fixed bottom-10 left-0 right-0 z-50 px-4 flex justify-center w-full">
+      <div className="bg-[#0f0f0f] border border-[#222222] rounded-lg w-full max-w-max shadow-2xl overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="px-6 py-4 flex items-center gap-6 lg:gap-16 min-w-max">
+          <DropdownItem label="SPEED" value="1x" />
+          <DropdownItem label="CURSOR" value="Block" />
+          <DropdownItem label="THEME" value="Dracula" />
+          <DropdownItem label="LANGUAGE" value="Python" />
+
+          <div className="flex flex-col items-center pl-4 lg:pl-6 border-l border-[#222222]/50 ml-2">
+            <button className="w-10 h-10 rounded-full bg-[#2a2a2a] flex items-center justify-center hover:bg-[#333333] transition-colors border border-transparent hover:border-[#444444] active:scale-95 shrink-0">
+              <Play className="fill-current text-[#dddddd] ml-0.5" />
+            </button>
           </div>
         </div>
-
-        <div className="h-6 w-px bg-white/5"></div>
-
-        {/* CURSOR */}
-        <div className="flex items-center gap-4 group">
-          <label className="text-[10px] uppercase tracking-widest text-white/20 font-semibold">Cursor</label>
-          <div className="flex items-center gap-1 cursor-pointer hover:text-white transition-colors">
-            <span className="text-[11px] text-white/60">Line</span>
-            <ChevronDown className="size-3 text-white/20" />
-          </div>
-        </div>
-
-        <div className="h-6 w-px bg-white/5"></div>
-
-        {/* BG TOGGLE */}
-        <div className="flex items-center gap-4 group">
-          <label className="text-[10px] uppercase tracking-widest text-white/20 font-semibold">Bg</label>
-          <div className="toggle-switch"></div>
-        </div>
-
-        <div className="h-6 w-px bg-white/5"></div>
-
-        {/* RESOLUTION */}
-        <div className="flex items-center gap-4 group">
-          <label className="text-[10px] uppercase tracking-widest text-white/20 font-semibold">Res</label>
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 hover:border-white/10 transition-colors cursor-pointer">
-            <span className="text-[11px] text-white/60">1080p</span>
-            <ChevronDown className="size-3 text-white/20" />
-          </div>
-        </div>
-
-        <div className="h-6 w-px bg-white/5 pointer-events-none opacity-0"></div>
-
-        {/* PREVIEW */}
-        <button className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-[11px] font-medium text-white/80 hover:bg-white/10 transition-all active:scale-[0.98]">
-          Preview Animation
-        </button>
       </div>
     </div>
   );

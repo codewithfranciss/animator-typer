@@ -1,6 +1,6 @@
 export function CodeEditor() {
   return (
-    <div className="relative w-full max-w-3xl aspect-[16/10] bg-black/80 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl flex flex-col overflow-hidden">
+    <div className="relative w-full max-w-3xl aspect-[16/10] bg-black/80 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl flex flex-col overflow-hidden">
       {/* Window Controls */}
       <div className="h-12 border-b border-white/5 bg-white/[0.01] flex items-center px-6 justify-between select-none">
         <div className="flex gap-2.5">
@@ -14,7 +14,7 @@ export function CodeEditor() {
 
       {/* Editor Content */}
       <div 
-        className="flex-1 p-12 font-mono text-[14px] leading-relaxed text-slate-400 relative overflow-hidden"
+        className="flex-1 p-12 font-mono text-[14px] leading-relaxed text-slate-400 relative overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         style={{ fontVariantLigatures: 'normal' }}
       >
         <div className="absolute left-0 top-12 bottom-0 w-16 flex flex-col items-end px-5 text-white/5 select-none text-xs font-mono leading-relaxed">
