@@ -9,8 +9,8 @@
   --color-surface-dark: #0a0a0a;
   --color-glass-dark: rgba(20, 20, 20, 0.7);
 
-  --font-display: var(--font-space-grotesk), sans-serif;
-  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-display: var(--font-space-grotesk);
+--font-mono: var(--font-jetbrains);
 
   --shadow-inner-glow: inset 0 0 20px rgba(255, 255, 255, 0.03);
   --shadow-dock: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -20,6 +20,7 @@
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
 }
+
 
 :root {
   --background: #000000;
@@ -36,7 +37,7 @@
     @apply border-white/10;
   }
   body {
-    @apply bg-background-dark text-slate-100 font-display selection:bg-primary/30 antialiased;
+    @apply bg-background-dark text-slate-100 font-mono selection:bg-primary/30 antialiased;
   }
 }
 

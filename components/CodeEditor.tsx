@@ -13,8 +13,11 @@ export function CodeEditor() {
       </div>
 
       {/* Editor Content */}
-      <div className="flex-1 p-12 font-mono text-[14px] leading-relaxed text-slate-400 relative overflow-auto">
-        <div className="absolute left-0 top-12 bottom-0 w-16 flex flex-col items-end px-5 text-white/5 select-none text-xs leading-relaxed">
+      <div 
+        className="flex-1 p-12 font-mono text-[14px] leading-relaxed text-slate-400 relative overflow-auto"
+        style={{ fontVariantLigatures: 'normal' }}
+      >
+        <div className="absolute left-0 top-12 bottom-0 w-16 flex flex-col items-end px-5 text-white/5 select-none text-xs font-mono leading-relaxed">
           {[...Array(18)].map((_, i) => (
             <span key={i + 1}>{i + 1}</span>
           ))}
