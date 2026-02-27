@@ -3,6 +3,8 @@ import { create } from 'zustand';
 interface EditorState {
   code: string;
   setCode: (code: string) => void;
+  fileName: string;
+  setFileName: (fileName: string) => void;
   cursorType: 'Block' | 'Line' | 'Underline';
   setCursorType: (type: 'Block' | 'Line' | 'Underline') => void;
   speed: string;
@@ -33,6 +35,8 @@ export function useRecorder(config: FrameConfig) {
   }, [config])
 }`,
   setCode: (code) => set({ code }),
+  fileName: 'useRecorder.ts',
+  setFileName: (fileName) => set({ fileName }),
   cursorType: 'Block',
   setCursorType: (cursorType) => set({ cursorType }),
   speed: '1x',
